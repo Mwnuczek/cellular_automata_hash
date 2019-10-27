@@ -1,0 +1,8 @@
+package com.company;
+
+public class InitKey {
+    boolean [] getKey(){
+        boolean[] key = new boolean[]{true,false,true,false, true, true, true, false, false, true,false,false, false, true,true,false,true,false, true, true, true, false, false, true,false,false,false, false,false, false, true,true,false,true,false, true, true, true, false, false, true,false,false,false, false,false, false, true,true,false,true, true, false, false, true,false,false,false, false,false, false, true,true,false,true,false, true, true, true, false,false,false, false,false, false, true,true,false,true,false, true, false, false, true,false,false,false, false,false, false, true, true, true, true, false, false, true,false,false,false, false,false, false,false,true,false, false, true,false,false,false, false,false, false, true,true,false,true,false, true, true, true, false, false, true,false,false,false, false,false, false, true,true,false,true,false, true, true, true, false, false, true,false,false,false, false,false,false,true,false, false, false, true,false,false,false, false,true,false, true, true, true, false, false, true,false,false,false, false,false,true,false,true,false, true, true, true, false, false, true,false,false,false, false,false, false, true,true,false,true,false, true, true, true, false, true, true,true,false, true, true, true, false, false, true,false,false,false, false,false, false, true,true,false,true,false, true, true, true, false, false, true,false,false,false, false,false, false, true,true,false,true,false, true,true, false,false, false, true,true,false,true,false, true, true, true, false, false, true,false,false,false, false,true, false, true};
+        return key;
+    }
+}
