@@ -24,7 +24,7 @@ public class Main {
         array[2]=true;
         array[3]=true;
         array[4]=true;
-        array[5]=false;
+        array[5]=true;
 
             for (boolean a : key
             ) {
@@ -32,7 +32,7 @@ public class Main {
             }
             System.out.println();
         Sha sha = new Sha();
-        Rule30 rule30 = new Rule30(array,key);
+        CAhash rule30 = new CAhash(array,key);
         String hash =new String(rule30.toBytes());
         rule30.getArray();
         System.out.println(hash);

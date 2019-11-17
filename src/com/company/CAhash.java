@@ -1,10 +1,10 @@
 package com.company;
 
-public class Rule30 {
+public class CAhash {
     int size = 30;
     Check check = new Check();
     boolean array [];
-    Rule30(boolean array[],boolean[] key){
+    CAhash(boolean array[], boolean[] key){
         this.array = array;
         this.size = array.length;
         boolean arrayCoppy[] = new boolean[size];
@@ -15,19 +15,28 @@ public class Rule30 {
             else
                 array[i]=false;
         }
-        for (int rounds = 0;rounds<20;rounds++
+        for (int rounds = 0;rounds<200;rounds++
             ) {
             System.arraycopy(array,0,arrayCoppy,0,size);
+            doOneRound(arrayCoppy);
+        }
+    }
+    void doOneRound (boolean [] arrayCoppy)
+        {
             for (int i = 0; i < size-1; i++
             ) {
                 if (i!=0&&i!=size-1)
-                array[i] = check.returnStatus(arrayCoppy[i - 1], arrayCoppy[i], arrayCoppy[i + 1]);
+                    array[i] = check.returnStatusRule30(arrayCoppy[i - 1], arrayCoppy[i], arrayCoppy[i + 1]);
                 else if (i==0)
-                    array[i] = check.returnStatus(arrayCoppy[size-1], arrayCoppy[i], arrayCoppy[i + 1]);
+                    array[i] = check.returnStatusRule30(arrayCoppy[size-1], arrayCoppy[i], arrayCoppy[i + 1]);
                 else if (i==size-1)
-                    array[i] = check.returnStatus(arrayCoppy[i - 1], arrayCoppy[i], arrayCoppy[0]);
+                    array[i] = check.returnStatusRule30(arrayCoppy[i - 1], arrayCoppy[i], arrayCoppy[0]);
             }
-        }
+            if (arrayCoppy[0] && !arrayCoppy[1] && arrayCoppy[2]){
+                for (int j = 0; j<size-1;j++){
+                    array[j]=array[j+1];
+                }
+            }
     }
     boolean [] getArray(){
                     for (boolean a : array
