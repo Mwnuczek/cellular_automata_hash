@@ -19,11 +19,11 @@ public class Main {
         boolean[] key = new boolean[256];
         InitKey initKey=new InitKey();
         key=initKey.getKey();
-        array[0]=false;
-        array[1]=true;
+        array[0]=true;
+        array[1]=false;
         array[2]=true;
-        array[3]=true;
-        array[4]=true;
+        array[3]=false;
+        array[4]=false;
         array[5]=true;
 
             for (boolean a : key
@@ -35,12 +35,13 @@ public class Main {
         CAhash rule30 = new CAhash(array,key);
         String hash =new String(rule30.toBytes());
         rule30.getArray();
-        System.out.println(hash);
-        System.out.printf(Base64.getEncoder().encodeToString(rule30.toBytes()));
         System.out.println();
-        System.out.println(rule30.bytesToHex(rule30.toBytes()));
+//        System.out.println("r30 bytes: "+hash);
+        System.out.printf("r30 base64: "+Base64.getEncoder().encodeToString(rule30.toBytes()));
+        System.out.println();
+        System.out.println("r30: "+rule30.bytesToHex(rule30.toBytes()));
         try {
-            System.out.println(sha.toHexString(sha.getSHA(sha.toBytes(array))));
+            System.out.println("sha: "+sha.toHexString(sha.getSHA(sha.toBytes(array))));
         }
         catch (NoSuchAlgorithmException e) {
             System.out.println("Exception thrown for incorrect algorithm: " + e);
